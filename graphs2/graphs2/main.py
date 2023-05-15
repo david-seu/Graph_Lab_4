@@ -1,21 +1,8 @@
-"""# This is a sample Python script.
-from GraphTraversal import manualTest1, manualTest2, randomTest
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print("Manual tests:")
-    print(manualTest1())
-    print(manualTest2())
-    print("Random tests:")
-    for _ in range(5):
-        print(randomTest())
-
-"""
 
 from copy import deepcopy
 
 from FileGraph import writeFile, readFile
-from Vertex import Vertex
 from UndirectedGraph import Graph
 
 
@@ -41,7 +28,7 @@ Commands:
     12. create random graph
     13. get edges
     14. get number edges
-    15. Generate Minimum Spanning Tree
+    15. generate minimum spanning tree
     0. exit
             """)
         commands = {
@@ -81,28 +68,28 @@ Commands:
 
     def addVertex(self):
         id = int(input("id>>"))
-        self.__graph.addVertex(Vertex(id))
+        self.__graph.addVertex(id)
 
     def addEdge(self):
         inId = int(input("inId>>"))
         outId = int(input("outId>>"))
         cost = int(input("cost>>"))
-        self.__graph.addEdge(Vertex(inId), Vertex(outId),cost)
+        self.__graph.addEdge(inId, outId,cost)
 
     def removeVertex(self):
         id = int(input("id>>"))
-        self.__graph.removeVertex(Vertex(id))
+        self.__graph.removeVertex(id)
 
     def removeEgde(self):
         inId = int(input("inId>>"))
         outId = int(input("outId>>"))
         cost = int(input("cost>>"))
-        self.__graph.removeEdge(Vertex(inId), Vertex(outId),cost)
+        self.__graph.removeEdge(inId, outId,cost)
 
     def checkEdge(self):
         inId = int(input("inId>>"))
         outId = int(input("outId>>"))
-        print(self.__graph.checkIfEdge(Vertex(inId), Vertex(outId)))
+        print(self.__graph.checkIfEdge(inId, outId))
 
     def copyGraph(self):
         self.__listGraphs.append(deepcopy(self.__graph))

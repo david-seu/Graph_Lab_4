@@ -5,7 +5,7 @@ def readFile(fileName):
     graph = Graph()
     with open(fileName, "r") as file:
         numberVertices, numberEdges = map(int, file.readline().split())
-        for i in range(numberVertices):
+        for i in range(1, numberVertices+1):
             graph.addVertex(i)
         for _ in range(numberEdges):
             startVertex, endVertex, cost = map(int, file.readline().split())

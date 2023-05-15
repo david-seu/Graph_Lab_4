@@ -53,13 +53,13 @@ class Graph:
         self.graph = sorted(self.graph,
                             key=lambda item: item[2])
 
-        parent = []
-        rank = []
+        parent = {}
+        rank = {}
 
         # Create V subsets with single elements
         for node in self.V:
-            parent.append(node)
-            rank.append(0)
+            parent[node] = node
+            rank[node] = 0
 
         # Number of edges to be taken is less than to V-1
         while e < len(self.V) - 1:
